@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saule Ebook</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container ebook-page">
+    <section class="card">
+      <h1>Saule Ebook</h1>
+      <p>A practical guide to the Saule language, its syntax, commands, file tools, browser tools, and current capabilities.</p>
+    </section>
+
+    <section class="card">
+      <h2>1. What is Saule?</h2>
+      <p>Saule is a programming language project written in C. It is focused on terminal usage, small scripts, text tools, browser tools, file editing, and experimentation.</p>
+    </section>
+
+    <section class="card">
+      <h2>2. Build and run</h2>
+<pre><code>cd Saule
+make
+./saule</code></pre>
+      <p>Run a Saule file:</p>
+<pre><code>./saule programa.saule
+./saule browser.saule
+./saule fileeditor.saule
+./saule viewtxt.saule</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>3. Basic printing</h2>
+<pre><code>print("Hello")
+print("Welcome to Saule")</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>4. Variables</h2>
+      <p>Saule supports `local` and `let` for assigning values.</p>
+<pre><code>local name = "User"
+print(name)
+
+let city = "ExampleCity"
+print(city)</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>5. Math and calculator</h2>
+      <p>Saule supports simple arithmetic with `+`, `-`, `*`, `/`.</p>
+<pre><code>calc(2+2)
+calc(8*5)
+calc(10-3)
+calc(12/4)
+
+local a = 10
+local b = 5
+calc(a+b)
+print(calc(7+8))</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>6. Input</h2>
+<pre><code>input name
+print(name)</code></pre>
+      <p>The REPL will ask for a value and store it in the variable.</p>
+    </section>
+
+    <section class="card">
+      <h2>7. If statements</h2>
+<pre><code>if 1 then print("true")
+if 0 then print("yes") else print("no")
+
+local ready = 1
+if ready then print("ready") else print("not ready")</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>8. While loops</h2>
+      <p>Saule currently supports a simple `while ... do ...` form.</p>
+<pre><code>local loop = 1
+while loop do print("loop works")
+local loop = 0</code></pre>
+      <p>There is a safety guard to avoid endless loops.</p>
+    </section>
+
+    <section class="card">
+      <h2>9. Functions</h2>
+      <p>Saule supports one-line functions using `function name = command`.</p>
+<pre><code>function hello = print("Hello from function")
+hello
+
+function makefile = writetxt("projects/example.txt", "Hello")
+makefile</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>10. Text file tools</h2>
+      <p>You can create, write, append, and view text files.</p>
+<pre><code>writetxt("projects/example.txt", "Hello")
+appendtxt("projects/example.txt", " world")
+viewtxt("projects/example.txt")</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>11. File editor script</h2>
+      <p>The built-in `fileeditor.saule` script asks for a full path and text, writes the file, then shows it.</p>
+<pre><code>./saule fileeditor.saule</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>12. Directory tools</h2>
+<pre><code>mkdir("projects")
+exists("projects")
+exists("projects/example.txt")</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>13. Browser tools</h2>
+      <p>Saule includes two browser-related commands:</p>
+      <ul>
+        <li>`browse(...)` fetches a web page and prints cleaned text</li>
+        <li>`browse-inweb(...)` opens a URL in the system web browser</li>
+      </ul>
+<pre><code>browse("https://example.com")
+browse-inweb("https://example.com")</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>14. Comments</h2>
+<pre><code># comment
+-- comment</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>15. Full command list</h2>
+      <ul>
+        <li>`print(...)`</li>
+        <li>`calc(...)` and `calc ...`</li>
+        <li>`input`</li>
+        <li>`browse(...)`</li>
+        <li>`browse-inweb(...)`</li>
+        <li>`viewtxt(...)`</li>
+        <li>`writetxt(...)`</li>
+        <li>`appendtxt(...)`</li>
+        <li>`mkdir(...)`</li>
+        <li>`exists(...)`</li>
+        <li>`if ... then ... else ...`</li>
+        <li>`while ... do ...`</li>
+        <li>`function name = command`</li>
+        <li>`local`</li>
+        <li>`let`</li>
+        <li>`vars`</li>
+        <li>`help`</li>
+        <li>`exit`</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>16. Example program</h2>
+<pre><code>print("Hello from Saule")
+local path = "projects/example.txt"
+mkdir("projects")
+writetxt(path, "Saule example")
+viewtxt(path)
+calc(5+7)
+function openweb = browse-inweb("https://example.com")
+if 1 then openweb</code></pre>
+    </section>
+  </main>
+</body>
+</html>
